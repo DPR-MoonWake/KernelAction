@@ -26,7 +26,7 @@
     },
     "toolchains": [
       {
-        "repo": "https://github.com/DPR-MoonWake/linux-x86-clang-21.0.0-r563880",
+        "repo": "https://gitlab.com/DR-KernelArchive/clang/r563880.git",
         "branch": "main",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
@@ -81,15 +81,15 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/DPR-MoonWake/RKSU/refs/heads/susfs-rksu-master/kernel/setup.sh",
-      "setupArg": "susfs-rksu-master",
-      "setupName": "KernelSU",
+      "setupLink": "https://raw.githubusercontent.com/XDL-MoonWake/KernelSU-Next/refs/heads/legacy-susfs-v2/kernel/setup.sh",
+      "setupArg": "legacy-susfs-v2",
+      "setupName": "KernelSU-Next",
       "needPatch": false,
       "susfsLink": ""
     },
     "toolchains": [
       {
-        "repo": "https://github.com/DPR-MoonWake/linux-x86-clang-21.0.0-r563880",
+        "repo": "https://gitlab.com/DR-KernelArchive/clang/r563880.git",
         "branch": "main",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
@@ -144,15 +144,15 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/DPR-MoonWake/RKSU/refs/heads/susfs-rksu-master/kernel/setup.sh",
-      "setupArg": "susfs-rksu-master",
-      "setupName": "KernelSU",
+      "setupLink": "https://raw.githubusercontent.com/XDL-MoonWake/KernelSU-Next/refs/heads/legacy-susfs-v2/kernel/setup.sh",
+      "setupArg": "legacy-susfs-v2",
+      "setupName": "KernelSU-Next",
       "needPatch": false,
       "susfsLink": ""
     },
     "toolchains": [
       {
-        "repo": "https://github.com/DPR-MoonWake/linux-x86-clang-21.0.0-r563880",
+        "repo": "https://gitlab.com/DR-KernelArchive/clang/r563880.git",
         "branch": "main",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
@@ -207,15 +207,15 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/DPR-MoonWake/KernelSU-Unified/refs/heads/susfs/kernel/setup.sh",
-      "setupArg": "susfs",
-      "setupName": "KernelSU",
+      "setupLink": "https://raw.githubusercontent.com/XDL-MoonWake/KernelSU-Next/refs/heads/legacy-susfs-v2/kernel/setup.sh",
+      "setupArg": "legacy-susfs-v2",
+      "setupName": "KernelSU-Next",
       "needPatch": false,
       "susfsLink": ""
     },
     "toolchains": [
       {
-        "repo": "https://github.com/DPR-MoonWake/linux-x86-clang-21.0.0-r563880",
+        "repo": "https://gitlab.com/DR-KernelArchive/clang/r563880.git",
         "branch": "main",
         "name": "clang-AOSP",
         "binPath": ["/bin"]
