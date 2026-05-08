@@ -118,7 +118,7 @@ jobs:
       - Set-repos
     strategy:
       max-parallel: 10
-      fail-fast: false
+      fail-fast: true
       matrix:
         repos: ${{ fromJSON(needs.Set-repos.outputs.repos) }}
     env:
@@ -345,7 +345,9 @@ jobs:
           args: ${{ steps.generate-args.outputs.args }}
         run: |
           echo "PATH Variable: $PATH"
-          make ${{ env.args }} ${{ env.build_out }}
+          echo "Now building kernel"
+          make ${{ env.args }} ${{ env.build_out }} V=0 2>&1 | \ grep --line-buffered -vE '^[[:space:]]*(CC|LD|AR|AS|CHK|CALL|HOSTCC|HOSTLD)'
+          echo "Build finished!"
       - name: "Run Additional Script"
         working-directory: ${{ env.KERNEL_NAME }}
         if: ${{ env.additional_post_script_link != 'disabled' }}
