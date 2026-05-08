@@ -346,7 +346,7 @@ jobs:
         run: |
           echo "PATH Variable: $PATH"
           echo "Now building kernel"
-          make ${{ env.args }} ${{ env.build_out }} V=0 2>&1 | \ grep --line-buffered -vE '^[[:space:]]*(CC|LD|AR|AS|CHK|CALL|HOSTCC|HOSTLD)'
+          make ${{ env.args }} ${{ env.build_out }} V=0 2>&1 | grep --line-buffered -vE '^[[:space:]]*(CC|LD|AR|AS|CHK|CALL|HOSTCC|HOSTLD)'
           echo "Build finished!"
       - name: "Run Additional Script"
         working-directory: ${{ env.KERNEL_NAME }}
