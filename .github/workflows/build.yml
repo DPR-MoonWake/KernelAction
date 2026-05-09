@@ -344,9 +344,9 @@ jobs:
         env:
           args: ${{ steps.generate-args.outputs.args }}
         run: |
-          echo "PATH Variable: $PATH"
-          echo "Now building kernel"
-          make ${{ env.args }} ${{ env.build_out }} V=0 2>&1 | grep --line-buffered -vE '^[[:space:]]*(CC|LD|AR|AS|CHK|CALL|HOSTCC|HOSTLD)'
+          make ${{ env.args }} ${{ env.build_out }} V=0 2>&1 | \
+            grep --line-buffered --color=always -E \
+            'warning:|error:|undefined reference|No rule to make target|KernelSU|SUSFS|LTO|MODPOST|VMLINUX|^[[:space:]]*(GEN|KSYM|SORTEX|SYSMAP|OBJCOPY|GZIP|DTC|CAT)\b'
           echo "Build finished!"
       - name: "Run Additional Script"
         working-directory: ${{ env.KERNEL_NAME }}
