@@ -347,6 +347,8 @@ jobs:
           echo "========================================"
           echo "         MoonWake Kernel Builder        "
           echo "========================================"
+          echo "Type              : ${{ github.event.inputs.config_type }}"
+          echo "Send to Telegram  : ${{ github.event.inputs.send_to_telegram }}"
           echo ""
           echo "Device            : ${{ matrix.repos.kernelSource.device }}"
           echo "Vendor            : ${{ matrix.repos.kernelSource.vendor }}"
