@@ -487,6 +487,7 @@ jobs:
   publish:
     needs: [Set-repos, Build-Kernel]
     runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.full_dump == 'true' || github.event.inputs.send_to_telegram == 'true' }}
     env:
       buildfile: "${{ needs.Set-repos.outputs.buildfile }}"
     steps:
@@ -521,9 +522,16 @@ jobs:
           printf "%s\n" ./packed_kernels/* >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
+      - name: Publish Artifact
+        uses: actions/upload-artifact@v4
+        if: ${{ github.event.inputs.full_dump == 'true' }}
+        with:
+          name: all-kernel-build-dumps
+          path: packed_kernels
+
       - name: Telegram File Uploader
         uses: xz-dev/TelegramFileUploader@v1.1.1
-        if: ${{ always() && github.event.inputs.send_to_telegram == 'true' }}
+        if: ${{ github.event.inputs.send_to_telegram == 'true' }}
         with:
           to-who: '${{ secrets.TELEGRAM_API_TO_WHO }}'
           message: |
@@ -550,10 +558,3 @@ jobs:
           API_ID: ${{ secrets.TELEGRAM_API_ID }}
           API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
           BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-
-      - name: Publish Artifact
-        uses: actions/upload-artifact@v4
-        if: ${{ always() && github.event.inputs.full_dump == 'true' }}
-        with:
-          name: all-kernel-build-dumps
-          path: packed_kernels
