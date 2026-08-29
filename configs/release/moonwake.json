@@ -5,7 +5,7 @@
       "vendor": "xiaomi",
       "name": "MoonWake-Vanilla",
       "defconfig": "ruby_defconfig",
-      "extraConfig": "vendor/lz4kd.config vendor/bbr.config vendor/noop.config vendor/kernelpatch.config",
+      "extraConfig": "vendor/bbr.config vendor/noop.config vendor/kernelpatch.config",
       "repo": "https://github.com/DPR-MoonWake/moonwake_kernel_xiaomi_ruby",
       "branch": "moon"
     },
@@ -69,7 +69,7 @@
       "vendor": "xiaomi",
       "name": "MoonWake-KernelSU",
       "defconfig": "ruby_defconfig",
-      "extraConfig": "vendor/lz4kd.config vendor/bbr.config vendor/noop.config vendor/kernelsu.config vendor/kernelpatch.config",
+      "extraConfig": "vendor/bbr.config vendor/noop.config vendor/kernelsu.config vendor/kernelpatch.config",
       "repo": "https://github.com/DPR-MoonWake/moonwake_kernel_xiaomi_ruby",
       "branch": "moon"
     },
@@ -133,7 +133,7 @@
       "vendor": "xiaomi",
       "name": "MoonWake-KernelSU-SuSFS",
       "defconfig": "ruby_defconfig",
-      "extraConfig": "vendor/lz4kd.config vendor/bbr.config vendor/noop.config vendor/kernelsu.config vendor/susfs.config vendor/kernelpatch.config",
+      "extraConfig": "vendor/bbr.config vendor/noop.config vendor/kernelsu.config vendor/susfs.config vendor/kernelpatch.config",
       "repo": "https://github.com/DPR-MoonWake/moonwake_kernel_xiaomi_ruby",
       "branch": "moon"
     },
